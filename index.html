@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tomáš Konečný - Fotografické Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      text-align: right;
+      padding: 4em;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('banr.jpg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      filter: blur(0px);
+      transform: scale(1.1);
+      z-index: -1;
+    }
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 0.2em;
+      color: white; /* Změna barvy textu na bílou */
+    }
+    header h2 {
+      font-size: 1.5em;
+      font-weight: normal;
+      margin-top: 0;
+      color: white; /* Změna barvy textu na bílou */
+    }
+    nav {
+      background-color: #333;
+      display: flex;
+      justify-content: space-around;
+      padding: 1em;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+      padding: 1em;
+      justify-content: center;
+    }
+    .categories a {
+      text-decoration: none;
+      color: #333;
+      width: calc(33.333% - 1em);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+
+    }
+    .categories img {
+      width: 100%;
+      filter: blur(2.5px);
+      transition: transform 0.3s ease, filter 0.3s ease;
+      border-radius: 10px;
+    }
+    .categories img:hover, .categories a:hover img {
+      transform: scale(1.1);
+      filter: blur(1px);
+      cursor: pointer;
+    }
+    .categories h3 {
+      font-size: 3em;
+      margin: 0.5em 0;
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+
+    }
+
+    
+
+
+
+
+  </style>
+</head>
+<body>
+<header>
+  <h1>Tomáš Konečný</h1>
+  <h2>Fotografické Portfolio</h2>
+</header>
+<nav>
+  <a href="Omne.html">O mně</a>
+</nav>
+<div class="categories">
+  <a href="portrety.html">
+    <img src="_DSC0140.jpg" alt="Portréty">
+    <h3>Portréty</h3>
+  </a>
+  <a href="auta.html">
+    <img src="_DSC1275.jpg" alt="Auta">
+    <h3>Auta</h3>
+  </a>
+  <a href="cestovani.html">
+    <img src="_DSC0431.jpg" alt="Cestování">
+    <h3>Cestování</h3>
+  </a>
+  <!-- Přidej další kategorie podle potřeby -->
+</div>
+</body>
+</html>

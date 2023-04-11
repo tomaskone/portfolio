@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tomáš Konečný - Auta</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: white;
+    }
+    header {
+      text-align: center;
+      padding: 2em;
+    }
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 0.2em;
+    }
+    nav {
+      background-color: #333;
+      display: flex;
+      justify-content: space-around;
+      padding: 1em;
+
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+      padding: 1em;
+      justify-content: center;
+    }
+    .gallery img {
+      width: calc(33.333% - 1em);
+      transition: transform 0.3s ease;
+      border-radius: 10px;
+    }
+    .gallery img:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      display: none;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Tomáš Konečný - Auta</h1>
+</header>
+<nav>
+  <a href="index.html">Zpět na hlavní stránku</a>
+</nav>
+<div class="gallery">
+  <img src="../_DSC1275.jpg" alt="Auto 1">
+  <img src="_DSC1752.jpg" alt="Auto 2">
+  <img src="_DSC1437.jpg" alt="Auto 3">
+  <img src="_DSC1419.jpg" alt="Auto 4">
+  <img src="_DSC1453.jpg" alt="Auto 5">
+  <img src="_DSC0707.jpg" alt="Auto 6">
+  <img src="_DSC0380.jpg" alt="Auto 7">
+  <img src="_DSC0983.jpg" alt="Auto 7">
+  <!-- Přidej další fotky aut podle potřeby -->
+</div>
+<div class="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-image" src="" alt="">
+</div>
+<script>
+  const galleryImages = document.querySelectorAll(".gallery img");
+  const lightbox = document.querySelector(".lightbox");
+  const lightboxImage = document.querySelector("#lightbox-image");
+
+  galleryImages.forEach(img => {
+    img.addEventListener("click", () => {
+      lightbox.style.display = "flex";
+      lightboxImage.src = img.src;
+    });
+  });
+
+  function closeLightbox() {
+    lightbox.style.display = "none";
+  }
+</script>
+</body>
+</html>
